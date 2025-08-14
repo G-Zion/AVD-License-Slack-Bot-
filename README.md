@@ -1,4 +1,4 @@
-AVD License Slack Bot – Technical Reference
+### AVD License Slack Bot – Technical Reference
 
 ## Overview
 The **AVD License Slack Bot** provides an internal `/availablelicenses` command in Slack to query Azure Table Storage and return current AVD license usage for a given utility.  
