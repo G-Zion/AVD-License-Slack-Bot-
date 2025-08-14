@@ -27,8 +27,8 @@ credential = DefaultAzureCredential()
 client = SecretClient(vault_url=KVUri, credential=credential)
 
 # Fetch secrets from Key Vault
-SLACK_BOT_TOKEN = client.get_secret("<SLACK_BOT_USER_TOKEN_SECRET_NAME>").value     # xoxb-...
-SLACK_APP_TOKEN = client.get_secret("<SLACK_APP_LEVEL_TOKEN_SECRET_NAME>").value    # xapp-...
+SLACK_BOT_TOKEN = client.get_secret("<SLACK_BOT_USER_TOKEN_SECRET_NAME>").value     
+SLACK_APP_TOKEN = client.get_secret("<SLACK_APP_LEVEL_TOKEN_SECRET_NAME>").value    
 STORAGE_KEY = client.get_secret("<AZURE_STORAGE_ACCESS_KEY_SECRET_NAME>").value.strip()
 
 # Create Azure Tables client with proper credential type
@@ -91,3 +91,4 @@ def available_licenses(ack, respond, command):
 if __name__ == "__main__":
     print("Starting Slack bot in Socket Mode...")
     SocketModeHandler(app, SLACK_APP_TOKEN).start()
+
